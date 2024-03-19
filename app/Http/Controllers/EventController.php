@@ -107,6 +107,12 @@ class EventController extends Controller
 
     public function destroy($id) {
 
+        $event = Event::findOrFail($id);
+
+        if($event->users->count() > 0){
+            return redirect('/dashboard')->with('msg', 'Não foi possivel excluir. O Evento possui participantes.');
+        }
+
         Event::findOrFail($id)->delete();
 
         return redirect('/dashboard')->with('msg', 'Evento excluido com sucesso');
@@ -119,7 +125,7 @@ class EventController extends Controller
 
         $event = Event::findOrFail($id);
 
-        if($user->id != $event->user_id);{
+        if($user->id != $event->user_id){
             return redirect('/dashboard');
         }
 
@@ -156,7 +162,7 @@ class EventController extends Controller
 
         $user = auth()->user();
 
-        $user->eventsAsParticipant()->attach($id);
+        $user->eventsasparticipant()->attach($id);
 
         $event = Event::findOrFail($id);
 

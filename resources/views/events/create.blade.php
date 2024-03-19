@@ -10,7 +10,7 @@
         @csrf
         <div class="form-group">
             <label for="image">Imagem do evento: </label>
-            <input type="file" id="image" name="image" class="from-control-file">
+            <input type="file" id="image" name="image" class="btn from-control-file">
         </div>
         <div class="form-group">
             <label for="title">Evento: </label>
@@ -29,7 +29,7 @@
             <select name="private" id="private" class="form-control">
                 <option value="0">Não</option>
                 <option value="1">Sim</option>
-                </select>
+            </select>
         </div>
         <div class="form-group">
             <label for="title">Descrição: </label>

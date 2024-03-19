@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-ligth">
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
-                    <div>
+                    <div class="btn">
                         <img src="/img/logo.png" alt="Logo">
                     </div>
                 </a>
